@@ -61,7 +61,7 @@ function populateStates() {
     { name: 'WYOMING', abbreviation: 'WY' },
   ];
 
-  let selectRef = document.getElementById('province');
+  let selectRef = document.getElementById('province').addEventListener('click,');
   for (let state of usStates) {
     selectRef.innerHTML += `<option value="${state.abbreviation}">${state.name}</option>`;
   }
@@ -89,29 +89,12 @@ function populateProvinces() {
   }
 }
 
-/* function populateList() {
-  // mySelect.onchange = function () {
-  let mySelect = document.getElementById('country');
-
-  if (mySelect.value === 'US') {
-    console.log('Hi');
-    populateStates();
-  } else if (mySelect.value === 'CA') {
-    populateProvinces();
-  }
-}
-populateList();
-// populateProvinces(); */
-
-let selectCountry = document.getElementById('country');
-
-function populateList() {
-  if (selectCountry.value === 'US') {
-    console.log('Hi');
-    populateStates();
-  } else if (selectCountry.value === 'CA') {
-    populateProvinces();
-  }
+if (document.getElementById('country').value === 'US') {
+  console.log('Hi');
+  populateStates();
+} else if (document.getElementById('country').value === 'CA') {
+  populateProvinces();
 }
 
-selectCountry.addEventListener('click', populateList);
+// populateStates();
+// populateProvinces();
